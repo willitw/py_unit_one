@@ -28,21 +28,25 @@ def draw_triangle():
         t.forward(100)
         t.left(120)
 
-#picks color for sqaure
-t.fillcolor("hotpink")
+for _ in range(4):
+    t.penup()
+    t.forward(100)
+    t.pendown()
+    #picks color for sqaure
+    t.fillcolor("hotpink")
 
-t.begin_fill()
-# Draws the square
-draw_square()
-t.end_fill()
+    t.begin_fill()
+    # Draws the square
+    draw_square()
+    t.end_fill()
 
-#piuks color for triangle
-t.fillcolor("lightblue")
+    #piuks color for triangle
+    t.fillcolor("lightblue")
 
-t.begin_fill()
-# Draws the triangle
-draw_triangle()
-t.end_fill()
+    t.begin_fill()
+    # Draws the triangle
+    draw_triangle()
+    t.end_fill()
 
 # Close the turtle window when clicked
 turtle.exitonclick()
