@@ -1,52 +1,64 @@
 #twig williams
 #drawing_houses.py
 #9/20/23
-#draws a simple house using turtle(so cute :] )
+#draws 4 houses for picky little rats who need all diffrnt sized houses each with a differnt color combo
+
 
 import turtle
 
-# Create a turtle screen and set up the turtle
-t = turtle.Screen()
-t.bgcolor("white")
-
-
-
-t = turtle.Turtle()
-t.speed(0)  # Sets the turtles speed
-
-
-# Function to draw square
-def draw_square():
+# Function to draw a square
+def draw_square(size, color):
+    turtle.begin_fill()
+    turtle.fillcolor(color)
     for _ in range(4):
-        t.forward(100)
-        t.right(90)
+        turtle.forward(size)
+        turtle.left(90)
+    turtle.end_fill()
 
+# Function to draw a triangle on top of a square(to make a house)
+def draw_house(size, square_color, triangle_color):
+    draw_square(size, square_color)
 
-# Function to draw triangle
-def draw_triangle():
+    # Move to the starting position for the triangle
+    turtle.penup()
+    turtle.goto(turtle.xcor(), turtle.ycor() + size)
+    turtle.pendown()
+
+    # Draw the triangle
+    turtle.begin_fill()
+    turtle.fillcolor(triangle_color)
     for _ in range(3):
-        t.forward(100)
-        t.left(120)
+        turtle.forward(size)
+        turtle.left(120)
+    turtle.end_fill()
 
-for _ in range(4):
-    t.penup()
-    t.forward(100)
-    t.pendown()
-    #picks color for sqaure
-    t.fillcolor("hotpink")
+# turtle settings
+turtle.speed(0)
+turtle.bgcolor("skyblue")
 
-    t.begin_fill()
-    # Draws the square
-    draw_square()
-    t.end_fill()
+# Draw the 1st house
+turtle.penup()
+turtle.goto(-150, -150)
+turtle.pendown()
+draw_house(100, "red", "orange")
 
-    #piuks color for triangle
-    t.fillcolor("lightblue")
+# Draw the 2nd house
+turtle.penup()
+turtle.goto(-50, -150)
+turtle.pendown()
+draw_house(80, "green", "yellow")
 
-    t.begin_fill()
-    # Draws the triangle
-    draw_triangle()
-    t.end_fill()
+# Draw the 3rd house
+turtle.penup()
+turtle.goto(30, -150)
+turtle.pendown()
+draw_house(60, "blue", "purple")
+
+# Draw the 4th house
+turtle.penup()
+turtle.goto(90, -150)
+turtle.pendown()
+draw_house(120, "hotpink", "white")
 
 # Close the turtle window when clicked
 turtle.exitonclick()
