@@ -18,8 +18,9 @@ t.speed(0)  # Sets the turtles speed
 # Function to draw square
 def draw_square():
     for _ in range(4):
-        t.forward(100)  # Adjust the side length as needed
+        t.forward(100)
         t.right(90)
+
 
 # Function to draw triangle
 def draw_triangle():
@@ -27,11 +28,21 @@ def draw_triangle():
         t.forward(100)
         t.left(120)
 
+#picks color for sqaure
+t.fillcolor("hotpink")
+
+t.begin_fill()
 # Draws the square
 draw_square()
+t.end_fill()
+
+#piuks color for triangle
+t.fillcolor("lightblue")
+
+t.begin_fill()
 # Draws the triangle
 draw_triangle()
+t.end_fill()
 
 # Close the turtle window when clicked
 turtle.exitonclick()
-#
