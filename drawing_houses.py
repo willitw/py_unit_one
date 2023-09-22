@@ -46,17 +46,17 @@ draw_house(100, "red", "orange")
 turtle.penup()
 turtle.goto(-50, -150)
 turtle.pendown()
-draw_house(80, "green", "yellow")
+draw_house(200, "green", "yellow")
 
 # Draw the 3rd house
 turtle.penup()
-turtle.goto(30, -150)
+turtle.goto(150, -150)
 turtle.pendown()
-draw_house(60, "blue", "purple")
+draw_house(80, "blue", "purple")
 
 # Draw the 4th house
 turtle.penup()
-turtle.goto(90, -150)
+turtle.goto(230, -150)
 turtle.pendown()
 draw_house(120, "hotpink", "white")
 
